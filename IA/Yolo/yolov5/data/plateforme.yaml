@@ -1,0 +1,7 @@
+path: ../Plateforme
+train: images/train
+val: images/train
+test: images/test
+
+nc: 2
+names: ['Bouchon', 'Tube']
