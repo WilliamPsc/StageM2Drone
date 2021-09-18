@@ -1,0 +1,21 @@
+Adresse de l'automate (défaut : 192.168.1.4) :
+
+Temps entre chaque lecture (défaut : 5000ms) :
+2000
+Nombre de répétitions de la lecture (défaut : 1) :
+2
+Adresse du registre à lire :
+%M103
+Taille du registre à lire (défaut : 1) :
+1
+Données enregistrées : 
+192.168.1.4 | 2000 | 2 | 103 | 1
+Si c'est OK, entrez 'ok'
+ok
+---------------
+
+Client connecté
+=== Contenu des registres ===
+0
+1
+Client déconnecté

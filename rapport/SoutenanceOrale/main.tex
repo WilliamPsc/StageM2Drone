@@ -1,0 +1,49 @@
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{inputenc} % style d'écriture
+\usepackage[T1]{fontenc}      % package
+\usepackage[french]{babel}  % package pour langue française
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{multirow, makecell}
+\usepackage{listings}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{1}
+
+% William PENSEC, étudiant en Master 2 LSE 2020/2021
+
+\input{input/header/include}
+\input{input/header/titlepage}
+
+\begin{document}
+	% ---------------------------------------------------------------- %
+	\begin{frame}
+	    \titlepage
+	\end{frame}
+	% ---------------------------------------------------------------- %
+	\input{input/sections/00introduction}
+	%
+	% ---------------------------------------------------------------- %
+	\section*{Sommaire}
+	\begin{frame}{Sommaire}
+	    \tableofcontents
+	\end{frame}
+	%
+	% ---------------------------------------------------------------- %
+	\input{input/sections/01plateforme}
+	%
+	% ---------------------------------------------------------------- %
+	\input{input/sections/02drone}
+	%
+	% ---------------------------------------------------------------- %
+	\input{input/sections/03ia}
+	%
+	% ---------------------------------------------------------------- %
+	\input{input/sections/04conclusion}
+	%
+	% ---------------------------------------------------------------- %
+\end{document}

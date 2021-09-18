@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[bottom=3.5cm, left=3cm, right=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{fancyhdr}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\usepackage{tcolorbox,listings}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[french]{nomencl}
+\usepackage{multicol}
+\usepackage{multirow, makecell}
+\usepackage[style=ieee]{biblatex}
+\usepackage[title]{appendix}
+
+\input{input/header/include}
+
+
+\begin{document}
+    \addtocontents{toc}{\protect\hypertarget{toc}{}}
+    \input{input/header/titlepage} % fait
+    \input{input/header/nomenclature} % fait
+		
+    \newpage
+	\pagestyle{fancy}
+	    \lhead{Rapport de Stage}
+	    \chead{2020/2021}
+		\rhead{William \textsc{Pensec}}
+		\cfoot{\hyperlink{toc}{\thepage}}
+		\renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+			
+	\input{input/sections/remerciements} % fait
+   
+    \input{input/sections/introduction} % fait
+    
+    \input{input/stageObj/structureAccueil} % fait 
+    
+    \input{input/stageObj/objStage} % fait
+    
+    \input{input/developpement/realisation} % fait
+
+    \input{input/sections/conclusion}  % fait
+    
+    \input{input/sections/annexes} % fait
+
+    \part*{Bibliographie}
+    \addcontentsline{toc}{part}{Bibliographie}
+    \printbibliography % fait
+\end{document}
