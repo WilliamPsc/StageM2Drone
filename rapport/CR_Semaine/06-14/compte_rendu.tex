@@ -1,0 +1,162 @@
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{inputenc} % style d'écriture
+\usepackage[T1]{fontenc}      % package
+\usepackage[francais]{babel}  % package pour langue française
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{multirow, makecell}
+
+% William PENSEC, étudiant en Master 2 LSE 2020/2021
+
+\usetheme[secheader]{Madrid}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{frametitle continuation}{}
+
+\title[Compte rendu de stage n\textsuperscript{o}9]{Coopération de drones dans un système hétérogène}
+\subtitle{Compte rendu de stage n\textsuperscript{o}9}
+\author{William \textsc{Pensec}}
+%\author{William \textsc{Pensec}}
+%\author{William \textsc{Pensec}}
+\institute[Lab-STICC]{Lab-Sticc}
+\date{14 juin 2021}
+
+%\AtBeginSection[]
+%{
+%\begin{frame}<beamer>{Sommaire}
+%\tableofcontents[currentsection,currentsubsection, 
+%    hideothersubsections, 
+%    sectionstyle=show/shaded,
+%]
+%\end{frame}
+%}
+
+\begin{document}
+	% ---------------------------------------------------------------- %
+	\begin{frame}
+		\begin{titlepage}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=.15]{labsticc.png}
+				\hspace{3cm}
+				\includegraphics[scale=.3]{ubo.png}
+			\end{figure}
+		\end{titlepage}
+	\end{frame}
+	
+	% ---------------------------------------------------------------- %
+	\section*{Sommaire}
+	\begin{frame}
+		\frametitle{Sommaire}
+		\begin{center}
+			\tableofcontents
+		\end{center}
+	\end{frame}
+	%
+	% ---------------------------------------------------------------- %
+	\section{Méthodologie}
+	\begin{frame}
+	    % représenter le drone avec les distances exactes avec les ancres
+	    % déplacer le drone et faire des comparatifs des valeurs
+	    % montrer les tests effectués pour voir l'amélioration des résultats
+	    % faire le comparatif des résultats obtenus au fur et à mesure dans des tableaux
+	    % faire des schémas de tout ce qui est possible et avec les mesures précises en comparatif
+	    % calcul de l'erreur de Bancroft et Decawave par rapport à la réalité
+	    % taille de la pièce : 820cm * 686 * 324
+    	    \begin{figure}
+			    \centering
+			    \includegraphics[width=0.56\textwidth]{pos.png}
+			\end{figure}
+	\end{frame}%
+	%% ---------------------------------------------------------------- %
+	\begin{frame}[allowframebreaks]
+	    \frametitle{Résultats obtenus}
+        \begin{table}[]
+            \resizebox{\textwidth}{!}{
+                \begin{tabular}{| c | c | c |}
+                    \hline
+                    \textbf{Méthode} & \textbf{Temps d'exécution} & \textbf{Valeur du vecteur résultat} \\[0.15cm] \hline
+                    Réalité & / & 0.76 0.43 0.26 \\[0.15cm]
+                    \hline
+                    Bancroft 7 ancres & entre 520 µs et 1200 µs & 0.71 0.80 0.78 \\[0.15cm]
+                    \hline
+                    Bancroft 5 ancres & entre 450 µs et 1200 µs & 0.68 1.37 1.46 \\[0.15cm]
+                    \hline
+                \end{tabular}
+            }
+            \caption{Semaine dernière}
+        \end{table}
+	\end{frame}
+	%
+	%% ---------------------------------------------------------------- %
+	\begin{frame}[allowframebreaks]
+        \begin{table}[]
+            \resizebox{\textwidth}{!}{
+                \begin{tabular}{| c | c | c | c |}
+                    \hline
+                    \textbf{Méthode} & \textbf{Temps d'exécution} & \textbf{Valeur du vecteur résultat} & \textbf{RSME\footnote{Root mean square error - Racine de l'erreur quadratique moyenne }} \\
+                    \hline
+                    Réalité & / & 0.76 0.43 0.26 & / \\
+                    \hline
+                    Bancroft & 840 µs & 0.98 -0.11 0.35 & 0.34 \\
+                    \hline
+                    Decawave & 840 µs & 0.78 0.38 0.26 & 0.07 \\
+                    \hline
+                \end{tabular}
+            }
+        \end{table}
+        
+        \begin{table}[]
+            \resizebox{\textwidth}{!}{
+                \begin{tabular}{| c | c | c |}
+                    \hline
+                    \textbf{Nombres d'ancres} & \textbf{Valeurs moyennes}\footnote{Sur 1000 itérations} & \textbf{Erreurs moyennes (RSME)}\\[0.15cm] \hline
+                    Réalité & / & / \\
+                    \hline
+                    Bancroft & \makecell{X = 0.98\\ Y = -0.11\\ Z = 0.35} & \makecell{X = 0.223\\ Y = 0.884 \\ Z = 0.418} \\
+                    \hline
+                    Decawave & \makecell{X = 0.77\\ Y = 0.38\\ Z = 0.26} & \makecell{X = 0.014\\ Y = 0.068\\ Z = 0.084}\\
+                    \hline
+                \end{tabular}
+            }
+            \caption*{}
+        \end{table}
+	\end{frame}
+	%
+	%% ---------------------------------------------------------------- %
+	\section{Conclusion}
+    \begin{frame}[allowframebreaks]
+        \begin{alertblock}{Conclusion Decawave}
+            \begin{itemize}
+                \setbeamertemplate{itemize item}[triangle]
+                \item Calculs sur 1000 itérations du programme
+                \item POS,0.72,0.27,0.3,85\textbackslash r\textbackslash n
+                \item Valeur très précise en X
+                \item Valeur approximative en Y
+                \item Valeur approximative en Z
+            \end{itemize}
+        \end{alertblock}
+        
+        \begin{alertblock}{Conclusion Bancroft}
+            \begin{itemize}
+                \setbeamertemplate{itemize item}[triangle]
+                \item 7 ancres
+                \item Calculs sur des valeurs fixes : CD24[0.00,0.00,0.00]=0.90 DA29[0.09,0.86,0.04]=0.78 CA10[1.67,0.00,0.03]=0.91 DC30[1.45,1.04,0.07]=1.02 le\_us=3936 est[0.75,0.34,0.18,78]\textbackslash r\textbackslash n
+                \item Valeurs extrêmement éloignées de la réalité 
+            \end{itemize}
+        \end{alertblock}
+        
+        \begin{alertblock}{Conclusion}
+            \begin{itemize}
+                \setbeamertemplate{itemize item}[triangle]
+                \item Valeurs en Z à améliorer en mettant davantage de hauteur sur les ancres ($\Delta$ plus important)
+                \item Précision plus importante des résultats grâce à la précision des positions de références
+            \end{itemize}
+        \end{alertblock}
+    \end{frame}
+	%
+	%% ---------------------------------------------------------------- %
+\end{document}
