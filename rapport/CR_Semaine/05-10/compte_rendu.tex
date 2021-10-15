@@ -1,0 +1,132 @@
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{inputenc} % style d'écriture
+\usepackage[T1]{fontenc}      % package
+\usepackage[francais]{babel}  % package pour langue française
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{amssymb}
+
+% William PENSEC, étudiant en Master 2 LSE 2020/2021
+
+\usetheme[secheader]{Madrid}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{frametitle continuation}{}
+
+\title[Compte rendu de stage n\textsuperscript{o}4]{Coopération de drones dans un système hétérogène}
+\subtitle{Compte rendu de stage n\textsuperscript{o}4}
+\author{William \textsc{Pensec}}
+%\author{William \textsc{Pensec}}
+%\author{William \textsc{Pensec}}
+\institute[Lab-STICC]{Lab-Sticc}
+\date{10 mai 2021}
+
+%\AtBeginSection[]
+%{
+%\begin{frame}<beamer>{Sommaire}
+%\tableofcontents[currentsection,currentsubsection, 
+%    hideothersubsections, 
+%    sectionstyle=show/shaded,
+%]
+%\end{frame}
+%}
+
+\begin{document}
+	% ---------------------------------------------------------------- %
+	\begin{frame}
+		\begin{titlepage}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=.15]{labsticc.png}
+				\hspace{3cm}
+				\includegraphics[scale=.3]{ubo.png}
+			\end{figure}
+		\end{titlepage}
+	\end{frame}
+	
+	% ---------------------------------------------------------------- %
+	\section*{Sommaire}
+	\begin{frame}
+		\frametitle{Sommaire}
+		\begin{center}
+			\tableofcontents
+		\end{center}
+	\end{frame}
+	%
+	% ---------------------------------------------------------------- %
+	\section{Positionnement via UWB}	
+	\begin{frame}[allowframebreaks]
+    	\frametitle{Positionnement via UWB}
+    	    \begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{position.png}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.7]{positionAndroid.png}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{data.png}
+			\end{figure}
+	\end{frame}
+	%
+	%% ---------------------------------------------------------------- %
+	\section{Programme gestion positionnement \& lecture SDK}	
+	\begin{frame}[allowframebreaks]
+    	\frametitle{Programme gestion positionnement \& lecture SDK}
+    	    \begin{exampleblock}{}
+        	    \begin{itemize}
+        	        \setbeamertemplate{itemize items}[triangle]
+        	        \item Programme en C++
+        	        \item Nécessité d'avoir 2 threads en parallèle :
+        	            \begin{itemize}
+        	                \setbeamertemplate{itemize items}[circle]
+        	                \item 1 thread pour la gestion du positionnement
+        	                \item 1 thread pour la gestion de la communication avec le drone via le SDK
+        	            \end{itemize}
+        	        \item Communication via USB entre la carte Decawave et le Raspberry Pi
+        	        \item Communication via UART entre drone et Raspberry Pi
+        	    \end{itemize}
+    	    \end{exampleblock}
+	\end{frame}
+	%
+	%% ---------------------------------------------------------------- %
+	\section{A faire}
+	\begin{frame}
+	\frametitle{A faire}
+	    \begin{alertblock}{}
+    	    \begin{itemize}
+    	    \setbeamertemplate{itemize items}[triangle]
+    	        \item Finir le programme de gestion du positionnement et de communication avec le drone
+    	        \item Positionner le drone dans la pièce selon les mesures récupérées des cartes Decawave
+    	        \item Envoi et réception de données du drone selon la position du drone
+    	        \item Regarder la précision nécessaire à avoir pour la plate-forme (distance des capteurs)
+    	        \item Essayer avec davantage de cartes Decawave afin de voir si on peut accroitre la précision de placement
+    	    \end{itemize}
+	    \end{alertblock}
+	\end{frame}
+	%
+	% ---------------------------------------------------------------- %
+	%\section*{Remerciements}
+	%\begin{frame}
+	%\frametitle{Remerciements}
+		%\begin{center}
+	%	Merci pour votre attention!
+
+		%\bigbreak
+		%Avez-vous des questions?
+		%\end{center}
+	%\end{frame}
+	% ---------------------------------------------------------------- %
+	
+	%\section*{Bibliographie}
+	%\begin{frame}[allowframebreaks]
+	%\frametitle{Bibliographie}
+		%\bibliographystyle{unsrt}
+		%\bibliography{bibliographie}
+	%\end{frame}
+	% ---------------------------------------------------------------- %
+\end{document}

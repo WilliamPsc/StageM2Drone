@@ -1,0 +1,86 @@
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{inputenc} % style d'écriture
+\usepackage[T1]{fontenc}      % package
+\usepackage[francais]{babel}  % package pour langue française
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{amssymb}
+
+% William PENSEC, étudiant en Master 2 LSE 2020/2021
+
+\usetheme[secheader]{Madrid}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{frametitle continuation}{}
+
+\title[Compte rendu de stage n\textsuperscript{o}7]{Coopération de drones dans un système hétérogène}
+\subtitle{Compte rendu de stage n\textsuperscript{o}7}
+\author{William \textsc{Pensec}}
+%\author{William \textsc{Pensec}}
+%\author{William \textsc{Pensec}}
+\institute[Lab-STICC]{Lab-Sticc}
+\date{31 mai 2021}
+
+%\AtBeginSection[]
+%{
+%\begin{frame}<beamer>{Sommaire}
+%\tableofcontents[currentsection,currentsubsection, 
+%    hideothersubsections, 
+%    sectionstyle=show/shaded,
+%]
+%\end{frame}
+%}
+
+\begin{document}
+	% ---------------------------------------------------------------- %
+	\begin{frame}
+		\begin{titlepage}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=.15]{labsticc.png}
+				\hspace{3cm}
+				\includegraphics[scale=.3]{ubo.png}
+			\end{figure}
+		\end{titlepage}
+	\end{frame}
+	
+	% ---------------------------------------------------------------- %
+	\section*{Sommaire}
+	\begin{frame}
+		\frametitle{Sommaire}
+		\begin{center}
+			\tableofcontents
+		\end{center}
+	\end{frame}
+	%
+	% ---------------------------------------------------------------- %
+	\section{Positionnement des cartes}
+	\begin{frame}[allowframebreaks]
+    	\frametitle{Positionnement des cartes}
+    	    \begin{block}{}
+				\begin{itemize}
+    	        \setbeamertemplate{itemize items}[triangle]
+				    \item Cartes decawave positionnées à différentes hauteur $\rightarrow$ meilleure précision (8/12)
+				    \item Orientation de l'antenne joue aussi sur le bruitage/précision des mesures
+				    \item Petites distances, positionnement inexact occasionnent bruitage élevé
+				\end{itemize}
+			\end{block}
+	\end{frame}
+	%
+	%% ---------------------------------------------------------------- %/
+	\section{Méthodes de positionnement}
+	\begin{frame}[allowframebreaks]
+    	\frametitle{Méthodes de positionnement}
+    	    \begin{block}{}
+				\begin{itemize}
+    	        \setbeamertemplate{itemize items}[triangle]
+				    \item Méthode Bancroft, fichiers récupérés de la librairie GPSTk
+				    \item Méthode de Gauss-Newton, fichiers récupérés d'un utilisateur sur le forum Decawave
+				\end{itemize}
+			\end{block}
+	\end{frame}
+	%
+	%% ---------------------------------------------------------------- %/
+\end{document}
